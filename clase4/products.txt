@@ -1,0 +1,38 @@
+[
+	{
+		"title": "PlayStation3",
+		"price": 200,
+		"thumbnail": "https://as.com/meristation/imagenes/2021/06/27/reportajes/1624775678_021044_1624775732_sumario_grande.jpg",
+		"id": 1
+	},
+	{
+		"title": "Sega",
+		"price": 500,
+		"thumbnail": "https://as.com/meristation/imagenes/2021/06/27/reportajes/1624775678_021044_1624775732_sumario_grande.jpg",
+		"id": 2
+	},
+	{
+		"title": "Sega2",
+		"price": 500,
+		"thumbnail": "https://as.com/meristation/imagenes/2021/06/27/reportajes/1624775678_021044_1624775732_sumario_grande.jpg",
+		"id": 3
+	},
+	{
+		"title": "PlayStation3",
+		"price": 200,
+		"thumbnail": "https://as.com/meristation/imagenes/2021/06/27/reportajes/1624775678_021044_1624775732_sumario_grande.jpg",
+		"id": 4
+	},
+	{
+		"title": "Sega",
+		"price": 500,
+		"thumbnail": "https://as.com/meristation/imagenes/2021/06/27/reportajes/1624775678_021044_1624775732_sumario_grande.jpg",
+		"id": 5
+	},
+	{
+		"title": "Sega2",
+		"price": 500,
+		"thumbnail": "https://as.com/meristation/imagenes/2021/06/27/reportajes/1624775678_021044_1624775732_sumario_grande.jpg",
+		"id": 6
+	}
+]
