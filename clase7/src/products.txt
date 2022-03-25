@@ -1,0 +1,20 @@
+[
+	{
+		"title": "Un titulo",
+		"price": "Un precio",
+		"thumbnail": "un thumb",
+		"id": 3
+	},
+	{
+		"title": "Guitarra",
+		"price": "200",
+		"thumbnail": "guitarra.png",
+		"id": 2
+	},
+	{
+		"title": "Guitarra",
+		"price": "123123",
+		"thumbnail": "guitarra.png",
+		"id": 3
+	}
+]
