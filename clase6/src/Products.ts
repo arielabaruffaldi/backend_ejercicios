@@ -36,7 +36,7 @@ class Products {
         }
     }
 
-    async getAll(): Promise<Product> {
+    async getAll(): Promise<Product[]> {
         return await getData(this.file)
     }
 

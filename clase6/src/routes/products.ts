@@ -13,6 +13,7 @@ router.get('/', async (req: Request, res: Response) => {
     res.json(data)
 });
 
+
 router.get('/:id', async (req: Request, res: Response) => {
     const { id } = req.params
     try {
