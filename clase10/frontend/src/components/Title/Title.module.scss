@@ -1,0 +1,29 @@
+
+.Title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    position: relative;
+    width: fit-content;
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: 600;
+        margin: 0;
+    }
+    &.hasMargin {
+        margin: 3rem 0 2rem;
+    }
+    &.underlined::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        bottom: 0;
+        background: var(--azul);
+        border-radius: 50px;
+        clip-path: inset(0px 60% 0 0.8rem round 5px);
+    }
+}

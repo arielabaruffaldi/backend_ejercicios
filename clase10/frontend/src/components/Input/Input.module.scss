@@ -1,0 +1,39 @@
+.Input {
+    background-color: var(--main-bg);
+    border-radius: 25px;
+    color: white;
+    font-family: var(--font);
+    margin-bottom: 20px;
+    outline: none;
+    padding: 0.7rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: 300ms all;
+    align-items: center;
+    z-index: 9;
+    width: 100%;
+    box-sizing: border-box;
+    &:hover {
+        transform: scale(1.03);
+        transition: 300ms all;
+    }
+    svg {
+        fill: var(--gris2);
+    }
+    input {
+        font-family: var(--font);
+        border: 0;
+        width: 100%;
+        background-color: transparent;
+        color: var(--blanco);
+        &:focus {
+            outline: none;
+        }
+    }
+
+    ::placeholder {
+        color: var(--gris2);
+        font-family: var(--font);
+    }
+}

@@ -1,0 +1,9 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    .InputContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}
