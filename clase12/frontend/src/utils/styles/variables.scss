@@ -1,0 +1,28 @@
+/* color variables */
+body {
+  --aside-background: var(--negro);
+  --aside-text: var(--gris);
+  --aside-text-active: var(--color-principal);
+  --text: var(--blanco);
+  --color-principal: var(--azul);
+  --color-error: var(--rojo);
+  --titles-color: var(--azul);
+  --main-bg: var(--negro2);
+  --main-bg-opacity: var(--negro3);
+
+  --body-bg: var(--negro);
+  --azul: #3f5ca7;
+  --azul2: #181a1f;
+  --blanco: #fff;
+  --negro: #1e2027;
+  --negro2: #242731;
+  --negro3: #2b2e3588;
+  --gris: #888991;
+  --gris2: rgb(151, 151, 151);
+  --rosa: rgb(245, 19, 141);
+  --rojo: rgb(252, 78, 78);
+  --naranja: rgb(252, 141, 37);
+  --verde: rgb(46, 211, 101);
+
+  --font: "Poppins", sans-serif;
+}

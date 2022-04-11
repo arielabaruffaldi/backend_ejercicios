@@ -1,0 +1,52 @@
+.Button {
+    background: transparent;
+    font-family: var(--font);
+    border: 2px solid var(--color-principal);
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    font-weight: 700;
+    color: var(--color-principal);
+    cursor: pointer;
+    transition: 300ms all;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    &.disabled {
+        pointer-events: none;
+        opacity: .4;
+    }
+    &:hover {
+        background: var(--color-principal);
+        color: var(--blanco);
+        transition: 300ms all;
+    }
+    &.secondary {
+        background: var(--color-principal);
+        color: var(--blanco);
+        &:hover {
+            background: transparent;
+            color: var(--color-principal);
+            transition: 300ms all;
+        }
+    }
+    &.noBorder {
+        color: var(--negro);
+        border: none;
+        padding: 0;
+        &:hover {
+            background: transparent;
+            color: var(--color-principal);
+            svg {
+                fill: var(--color-principal);
+            }
+        }
+    }
+    &:active,
+    &:focus {
+        outline: 0;
+    }
+    &:active {
+        transform: scale(0.96);
+        transition: 100ms all;
+    }
+}

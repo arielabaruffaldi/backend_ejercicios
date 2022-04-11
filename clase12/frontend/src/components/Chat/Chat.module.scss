@@ -1,0 +1,28 @@
+.Chat{
+    // width: fit-content;
+    background: var(--main-bg);
+    padding: 3rem;
+    padding-top: 1rem;
+    border-top-left-radius: 46px;
+    height: 100vh;
+    box-sizing: border-box;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .Input{
+        background-color: var(--negro);
+    }
+    .MessagesContainer{
+        height: 70%;
+        overflow-y: scroll;
+        padding: 1rem 2rem;
+        margin-bottom: 3rem;
+    }
+    .closeModal{
+        cursor: pointer;
+        padding: 1rem;
+        &:hover{
+        }
+    }
+}
