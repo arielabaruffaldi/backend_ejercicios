@@ -1,0 +1,15 @@
+.ItemList {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    flex-direction: column;
+    column-gap: 0px;
+    margin: 10px;
+
+}
+
+
+.Img-Source {
+    max-width: 2rem;
+    object-fit: contain;
+    height:2rem
+}

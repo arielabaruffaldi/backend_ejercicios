@@ -1,0 +1,7 @@
+.chat-window {
+    height: 10rem;
+    overflow: scroll;
+    font-size: 10px;
+    background-color:#6495ed	
+
+}
