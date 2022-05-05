@@ -1,0 +1,74 @@
+// inicializo servidor
+mongod --dbpath "C:\Users\MusicLaB\Desktop\MERN\ecommerce+mongodb\mongodb"
+
+// creacion de usuarios
+
+use ecommerce (para crear el usuario encadenado a una BD)
+
+db.createUser({
+    user: "admin",
+    pwd: "1234",
+    roles: [{"role": "readWrite", "db": "ecommerce"}]
+})
+
+
+db.createUser({
+    user: "pepe",
+    pwd: "1234",
+    roles: [{"role": "read", "db": "ecommerce"}]
+})
+
+//inicializamos con authentication activada
+mongod --dbpath "C:\Users\MusicLaB\Desktop\MERN\ecommerce+mongodb\mongodb" --auth
+
+
+// logueamos con credenciales
+mongo -u "pepe" -p "1234" --authenticationDatabase ecommerce
+
+
+
+use ecommerce
+db.createCollection("messages")
+db.createCollection("products")
+db.messages.insertMany([{"email": "baruffa_89@hotmail.com", "message": "Cosa de Mandinga"},
+{"email": "bot@gmail.com", "message": "buenas"},
+{"email": "baruffa_89@hotmail.com", "message": "que talco?"},
+{"email": "bot@gmail.com", "message": "todo bailable"},
+{"email": "baruffa_89@hotmail.com", "message": "optimo, tenes planes para hoy?"},
+{"email": "bot@gmail.com", "message": "tratar de conquistar el mundo"},
+{"email": "baruffa_89@hotmail.com", "message": "Me puedo sumar?"},
+{"email": "bot@gmail.com", "message": "Multiplicate"},
+{"email": "baruffa_89@hotmail.com", "message": "Roger that"},
+{"email": "bot@gmail.com", "message": "Disculpa no te entendi quizo decir Roger Rabbit?"},
+{"email": "baruffa_89@hotmail.com", "message": "No pelotudo, nos vemos"}])
+
+db.products.insertMany([{"name": "Playstation", "price": 356, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCb3_jyGzpgchsIedoDqGp2HIRu05PjAYUQA&usqp=CAU", "code": "Asd567", "description": "siempre segundera", "stock": "20"},
+{"name": "Nintendo 64", "price": 900, "thumbnail": "https://media.vandal.net/m/11-2019/2019111419404532_1.jpg", "code": "Asd597", "description": "la mejor consola que existio", "stock": "45"},
+{"name": "Zelda Ocarina of time", "price": 1200, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8UsGtfIChVUB2lJL9oXP1LZ6PtSciSinxEQ&usqp=CAU", "code": "Asd598", "description": "El mejor juego de la historia", "stock": "100"},
+{"name": "Final Fantasy VII", "price": 1600, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPJbL5flgC2clL41VOCwkgITKVWlFUCqgaQg&usqp=CAU", "code": "Afd599", "description": "El segundo mejor juego de la historia", "stock": "55"},
+{"name": "Gameboy Color", "price": 2200, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8xG2xhN6W9UrQDmL96RIEE9Vf_emDqx5y5Q&usqp=CAU", "code": "Afd600", "description": "primer consola portatil color", "stock": "15"},
+{"name": "Joystick Xbox", "price": 3000, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW3EQb7FQJYnD7WclR_6ixD4N1lxrYSMJc5g&usqp=CAU", "code": "Afd601", "description": "Joystick para xbox y Pc", "stock": "5"},
+{"name": "Conkers Bad Fur Day", "price": 3800, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8hc0om0qJxgUuEuq0KZN5Ed1RbentP41QOQ&usqp=CAU", "code": "AFd602", "description": "Juegaso under", "stock": "10"},
+{"name": "Pokemon Yellow", "price": 4300, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqqnlxf_8VUTIaQdXj3VHRSfAjLqqLOULDow&usqp=CAU", "code": "AFd603", "description": "Gran juego de gameboy jugado por mucha gente de la comunidad", "stock": "15"},
+{"name": "Monitor Curvo MSI", "price": 4900, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8OEWcqQmxHgW1xp8UsLwpDMVjbE3bjTN3SQ&usqp=CAU", "code": "AFd604", "description": "Monitor curvo 144Hz perfecto para gaming", "stock": "20"},
+{"name": "Pin Nintendo", "price": 5000, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjmlB72mJKnBTPHa5ad2jikn9cLgESc0qt1w&usqp=CAU", "code": "Afgd604", "description": "Pin de nintendo", "stock": "200"}])
+
+db.products.find().pretty()
+db.messages.find().pretty()
+db.products.count()
+db.messages.count()
+
+db.products.insertOne({"name": "Sega Genesis", "price": 9000, "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE35GzVoS8jH7f3hNDhu94PRs2rqk1UzsJfXDHVy5kCy9sJHXA8sB-RiQ-9nuZGONXpqA&usqp=CAU", "code": "Asd23597", "description": "El sega que uso Marado", "stock": "1"})
+
+db.products.find({"price": {$lt: 1000}}).pretty()
+db.products.find({"price": {$gt: 1000, $lt: 5000}}).pretty()
+db.products.find({"price": {$gt: 3000}}).pretty()
+
+db.products.find().sort({price:1}).skip(2).limit(1).pretty()
+
+db.products.updateMany({price: {$gt: 4000}}, {$set: {"stock" : 100}})
+
+db.products.deleteMany({price: {$lt: 1000}})
+
+
+
